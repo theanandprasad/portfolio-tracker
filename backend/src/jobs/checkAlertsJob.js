@@ -2,6 +2,7 @@ const cron = require('node-cron');
 const { Alert, WatchlistItem, User } = require('../models');
 const { getStockPrice } = require('../services/financialApiService');
 const { sendNotification } = require('../services/notificationService');
+const { Op } = require('sequelize');
 
 async function checkAlerts() {
   console.log('Starting alert check job');
